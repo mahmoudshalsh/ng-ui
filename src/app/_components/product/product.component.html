@@ -1,0 +1,14 @@
+<div class="row">
+  <nav class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+    <ul class="list-group card">
+      <li class="list-group-item" *ngFor="let product of products">
+          <!--[routerLinkActive]="['bg-success','text-white']" [routerLink]="product.productId">-->
+        <span class="badge badge-pill badge-default">{{product.price}}</span> {{product.name}}
+      </li>
+    </ul>
+  </nav>
+  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
