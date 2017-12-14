@@ -3,14 +3,15 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-
 import { AppComponent } from './app.component';
 import { AppRoute } from './app.route';
 
-import { SharedModule } from './_modules';
+import { HomeComponent, PageNotFoundComponent, LoginComponent,
+     CategoryComponent, ProductComponent, RegisterComponent } from './_components';
 import { FooterComponent, HeaderComponent, NavbarComponent } from './_directives';
-import { HomeComponent, PageNotFoundComponent, CategoryComponent, ProductComponent } from './_components';
-import { ProductService } from './_services';
+import { AuthGuard } from './_guards';
+import { SharedModule } from './_modules';
+import { ProductService, AuthenticationService } from './_services';
 
 @NgModule({
     declarations: [
@@ -21,17 +22,21 @@ import { ProductService } from './_services';
         HomeComponent,
         PageNotFoundComponent,
         ProductComponent,
-        CategoryComponent
+        CategoryComponent,
+        LoginComponent,
+        RegisterComponent
     ],
     imports: [
         BrowserModule,
         FormsModule,
         HttpClientModule,
-        CommonModule,
+        SharedModule,
         AppRoute
     ],
     providers: [
-        ProductService
+        AuthenticationService,
+        ProductService,
+        AuthGuard
     ],
     bootstrap: [AppComponent]
 })
