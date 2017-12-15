@@ -4,11 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { AppRoute } from './app.route';
+import { AppRoute } from './app.routing';
 
 import { HomeComponent, PageNotFoundComponent, LoginComponent,
-     CategoryComponent, ProductComponent, RegisterComponent } from './_components';
-import { FooterComponent, HeaderComponent, NavbarComponent } from './_directives';
+     CategoryComponent, ProductComponent, RegisterComponent,
+     FooterComponent, HeaderComponent, NavbarComponent } from './_components';
+import {  } from './_directives';
 import { AuthGuard } from './_guards';
 import { SharedModule } from './_modules';
 import { ProductService, AuthenticationService } from './_services';
